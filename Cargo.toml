@@ -3,6 +3,8 @@ name = "real_c_string"
 version = "0.1.0"
 authors = ["Лач <iam@lach.pw>"]
 edition = "2018"
+description = "Generate string parseable in compiled binary"
+license = "MIT"
 
 [dependencies]
 proc-macro2 = "0.4.30"
