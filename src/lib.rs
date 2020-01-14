@@ -1,5 +1,3 @@
-#![feature(proc_macro_hygiene)]
-
 extern crate proc_macro;
 
 use quote::quote;
