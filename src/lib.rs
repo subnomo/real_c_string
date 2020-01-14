@@ -1,5 +1,6 @@
 extern crate proc_macro;
 
+use proc_macro_hack::proc_macro_hack;
 use quote::quote;
 use syn::{
     parse::{Parse, ParseStream, Result},
@@ -104,7 +105,7 @@ fn transform(
 ///     assert_eq!(same_as_array_of_bytes[i], unsafe{*c_string.offset(i as isize)})
 /// }
 /// ```
-#[proc_macro]
+#[proc_macro_hack]
 pub fn real_c_string(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     if input.is_empty() {
         panic!("No passed tokens!");
@@ -136,7 +137,7 @@ pub fn real_c_string(input: proc_macro::TokenStream) -> proc_macro::TokenStream 
 ///     assert_eq!(same_as_array_of_bytes[i], unsafe{*c_wstring.offset(i as isize)})
 /// }
 /// ```
-#[proc_macro]
+#[proc_macro_hack]
 pub fn real_c_wstring(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     if input.is_empty() {
         panic!("No passed tokens!");
